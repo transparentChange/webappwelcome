@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card login-container">
+        <h2>Login</h2>
+        <!-- Error message placeholder -->
+        <form action="login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <div id="error-message" style="color:red; margin-bottom:2rem; display:none;">
+            Invalid username or password
+        	</div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        // Show error message
+        if (params.has("error")) {
+            document.getElementById("error-message").style.display = "block";
+        }
+
+        // Pre-fill username if present
+        if (params.has("username")) {
+            document.getElementById("username").value = params.get("username");
+        }
+    </script>
+</body>
+</html>
