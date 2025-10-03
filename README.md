@@ -1,4 +1,4 @@
-Java webapp containing sample login functionality.
+Java webapp containing sample login functionality. Served through Apache Tomcat. 
 
 Hosted on AWS EC2 and accessible at https://184.72.211.119/webappwelcome/login.html.
 
